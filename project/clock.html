@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clock{
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: rgb(255, 0, 0);
+            border: black 3px solid;
+            position: relative;
+            margin: 0 auto;
+            margin-top: 10%;
+        }
+        .hand{
+            width: 7px;
+            background-color: black;
+            height: 120px;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            border-radius: 10px;
+            transition-duration: 60s;
+            transform-origin: bottom;
+        }
+        .hand:hover{
+            transform: rotate(360deg);
+        }
+        .smallhand{
+            width: 8px;
+            background-color: black;
+            height: 60px;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            border-radius: 3600s;
+            transform-origin: bottom;
+        }
+        .smallhand:hover{
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="hand"></div>
+    </div>
+    
+</body>
+</html>

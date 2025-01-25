@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Layout</title>
+    <link rel="stylesheet" href="produit.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        
+        <nav>
+            <ul>
+                <li><a href="produit.html">Accueil</a></li>
+                <li><a href="produit.html">Produits</a></li>
+                <li><a href="#">magasins</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="connecter.html">se connecter</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Main Section -->
+    <main>
+        <!-- Left Side Bar -->
+        <aside class="sidebar">
+           <b>WASSIM ELJAMALI</b> 
+        </aside>
+
+        <!-- Content Section -->
+         <title>selected item </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            display: flex;
+            gap: 50px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .left-section {
+            flex: 1;
+        }
+        .main-image img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .thumbnails {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .thumbnails img {
+            width: 60px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 8px;
+        }
+        .thumbnails img:hover {
+            border-color: #000;
+        }
+        .right-section {
+            flex: 1;
+        }
+        .product-title {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .product-price {
+            font-size: 24px;
+            color: #d90000;
+            margin: 15px 0;
+        }
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin: 10px 0;
+        }
+        .rating span {
+            font-size: 16px;
+            color: #555;
+        }
+        .rating .stars {
+            color: #ffc107;
+            font-size: 18px;
+        }
+        .description {
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+        .expandable-section {
+            margin-top: 20px;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        .expandable-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .expandable-content {
+            display: none;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+        .quantity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .quantity button {
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .add-to-bag {
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            font-size: 18px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .add-to-bag:hover {
+            background: #444;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Left Section: Images -->
+        <div class="left-section">
+            <div class="main-image">
+                <img src="interdit red.jpg" alt="Product Image" id="img">
+            </div>
+            <div class="thumbnails">
+                <img class="img" src="interdit 1.jfif" alt="Thumbnail 1">
+                <img class="img" src="interdit 2.jpg" alt="Thumbnail 2">
+                <img class="img" src="INTERDIT 3.webp" alt="Thumbnail 3">
+            </div>
+        </div>
+
+        <!-- Right Section: Details -->
+        <div class="right-section">
+            <h1 class="product-title">L'Interdit Eau de Parfum Rouge Givenchy</h1>
+            <div class="product-price">$130.00</div>
+            <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span>(3 reviews)</span>
+            </div>
+            <p class="description">
+                A white bouquet tinged with red in this fiery fragrance for women. Carnal tuberose and opulent jasmine are ignited by a fiery red accord of red pepper leaf, blood orange and ginger, signing the fragrance with a floral and spicy trail. This bewitching Eau de Parfum elevates addiction to the rank of obsession.
+            </p>
+            <div class="quantity">
+                <button onclick="changeQuantity(-1)">-</button>
+                <span id="quantity">1</span>
+                <button onclick="changeQuantity(1)">+</button>
+            </div>
+            <button class="add-to-bag" onclick="addToBag()">Add to Bag</button>
+
+            <!-- Expandable Sections -->
+            <div class="expandable-section">
+                <div class="expandable-header" onclick="toggleSection('details')">
+                    Product Details
+                </div>
+                <div id="details" class="expandable-content">
+                    225,71€ / 100ml <br>
+                    L'Interdit Eau de Parfum Rouge by Givenchy is an Oriental Floral fragrance for women. L'Interdit Eau de Parfum Rouge was launched in 2021. L'Interdit Eau de Parfum Rouge was created by Dominique Ropion, Anne Flipo and Fanny Bal. Top notes are Ginger and Blood Orange; the middle notes are Tuberose, Jasmine and Chili Leaf; the base notes are Sandalwood, Patchouli and Vetiver.
+                </div>
+            </div>
+            <div class="expandable-section">
+                <div class="expandable-header" onclick="toggleSection('ingredients')">
+                    Ingredients
+                </div>
+                <div id="ingredients" class="expandable-content">
+                    ALCOHOL, PARFUM (FRAGRANCE), AQUA (WATER), LINALOOL, LIMONENE, BUTYL METHOXYDIBENZOYLMETHANE, HYDROXYCITRONELLAL, GERANIOL, CITRONELLOL, BENZYL SALICYLATE, COUMARIN, ALPHA-ISOMETHYL IONONE, EUGENOL, CITRAL.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for Quantity Adjustment
+        let quantity = 1;
+        function changeQuantity(amount) {
+            quantity += amount;
+            if (quantity < 1) quantity = 1;
+            document.getElementById('quantity').innerText = quantity;
+        }
+
+        function addToBag() {
+            alert(`Added ${quantity} item(s) to your bag!`);
+        }
+
+        // JavaScript for Expandable Sections
+        function toggleSection(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        }
+        let  img = document.getElementById('img');
+        let all = document.querySelectorAll('.img')
+        img.src = localStorage.image;
+        for (let i = 0; i < all.length; i++) {
+            all[i].onclick = () => {
+                img.src = all[i].src;
+            }
+            
+        }
+    </script>
+
+</body>
+ <!-- Right Side Bar -->
+ <aside class="description">
+
+</aside>
+</main>
+
+<!-- Footer Section -->
+<footer>
+<p>wassim &copy;</p>
+</footer>
+</html>

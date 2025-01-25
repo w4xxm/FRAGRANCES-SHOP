@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .product-card {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 10px;
+            width: 300px;
+            cursor: pointer;
+            background-color: #f9f9f9;
+            transition: background-color 0.3s;
+        }
+        .product-card:hover {
+            background-color: #f0f0f0;
+        }
+        .product-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .product-details {
+            display: none;
+            margin-top: 10px;
+        }
+        .product-price {
+            font-size: 18px;
+            color: #2e8b57;
+        }
+        .product-description {
+            font-size: 14px;
+            color: #555;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="product-card" onclick="toggleDetails(this)">
+        <div class="product-title">Product 1</div>
+        <div class="product-details">
+            <div class="product-price">$29.99</div>
+            <div class="product-description">
+                This is a great product that offers amazing features to make your life easier. It's durable, affordable, and easy to use.
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card" onclick="toggleDetails(this)">
+        <div class="product-title">Product 2</div>
+        <div class="product-details">
+            <div class="product-price">$49.99</div>
+            <div class="product-description">
+                This product is perfect for those looking for high-quality performance. It offers excellent value for money and comes with a 2-year warranty.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDetails(productCard) {
+            const details = productCard.querySelector('.product-details');
+            if (details.style.display === 'block') {
+                details.style.display = 'none';
+            } else {
+                details.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
